@@ -3,14 +3,16 @@ from ..translator import english_to_french, french_to_english
 
 
 class TestTranslator(unittest.TestCase):
-    def test_english_to_french(self):
-        self.assertEqual(english_to_french(""), "")
+    def test_etf_hello_notequal_emptystring(self):
         self.assertNotEqual(english_to_french("Hello"), "")
+
+    def test_etf_hello_equal_bonjour(self):
         self.assertEqual(english_to_french("Hello"), "Bonjour")
 
-    def test_french_to_english(self):
-        self.assertEqual(french_to_english(""), "")
+    def test_fte_bonjour_notequal_emptystring(self):
         self.assertNotEqual(french_to_english("Bonjour"), "")
+
+    def test_fte_bonjour_equal_hello(self):
         self.assertEqual(french_to_english("Bonjour"), "Hello")
 
 
